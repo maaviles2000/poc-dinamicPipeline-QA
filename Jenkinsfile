@@ -8,7 +8,7 @@ pipeline {
                     prdestino=env.GITHUB_PR_TARGET_BRANCH
                     prorigen=env.GITHUB_PR_SOURCE_BRANCH
                     ramagithub=env.GIT_BRANCH
-                    ramagithub=ramagithub.split("/")[1]
+                    ramagithub=ramagithub.split("origin/")
                     echo env.GITHUB_PR_TARGET_BRANCH
                     echo env.GITHUB_PR_SOURCE_BRANCH
                     echo env.GIT_BRANCH
