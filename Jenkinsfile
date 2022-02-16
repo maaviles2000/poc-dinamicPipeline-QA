@@ -3,7 +3,9 @@ pipeline{
   
   stages{
     stage("Dinamically test"){
-      echo "All right!"
+      steps{
+        echo "All right!"
+      }
     }
   }
 }
