@@ -5,17 +5,18 @@ pipeline {
         stage('Branch name') {
             when {
                 expression {
-                    return env.BRANCH_NAME != 'master';
+                    return ghprbTargetBranch == 'develop';
                 }
             }
             steps {
-                /*Same*/
+                echo "Lets code in develop!"
+                /*Same
                 echo "${x}"
                 echo "${GIT_BRANCH.split("origin/")[1]}"
                 echo "${ghprbSourceBranch}"
                 echo "${x}"
                 echo "${ghprbTargetBranch}"
-                echo "${x}"
+                echo "${x}"*/
             }
         }
     }
