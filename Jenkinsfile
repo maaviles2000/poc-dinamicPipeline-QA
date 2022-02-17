@@ -3,7 +3,9 @@ pipeline {
     stages{
         stage('Branch name') {
             when {
-                changeRequest target: "develop"
+                expression {
+                    return CHANGE_TARGET == 'develop';
+                }
             }
             steps {
                 echo "${GIT_BRANCH.split("origin/")[1]}"
