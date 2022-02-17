@@ -1,4 +1,4 @@
-def x = "*****"
+def x = "***************************************************************************************"
 pipeline {
     agent any
     stages{
@@ -9,10 +9,11 @@ pipeline {
                 }
             }
             steps {
+                /*Same*/
+                echo "${x}"
                 echo "${GIT_BRANCH.split("origin/")[1]}"
-                echo "${ghprbPullId}"
-                echo "${ghprbActualCommit}"
                 echo "${ghprbSourceBranch}"
+                echo "${x}"
                 echo "${ghprbTargetBranch}"
                 echo "${x}"
             }
