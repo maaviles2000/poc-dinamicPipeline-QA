@@ -25,7 +25,7 @@ pipeline {
         stage('Branch name') {
             when {
                 expression {
-                    return ghprbTargetBranch == 'develop';
+                    return ghprbTargetBranch == 'master';
                 }
             }
             steps {
