@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                echo "${GITHUB_PR_TARGET_BRANCH}"
+                echo "${GIT_BRANCH}"
             }
         }
     }
