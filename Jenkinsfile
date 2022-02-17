@@ -22,8 +22,8 @@ pipeline {
                                 echo 'PR MASTER'
                             }
                             break
-                        case "feature/dinamic-pipeline":
-                            if (prorigen == 'feature/dinamic-pipeline' && prdestino== 'develop') {
+                        case "dani":
+                            if (prorigen == 'dani' && prdestino== 'develop') {
                                 echo 'PR DEVELOP'
                             }
                             break
