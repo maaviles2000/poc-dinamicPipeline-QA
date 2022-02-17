@@ -2,10 +2,9 @@ pipeline {
     agent any
     stages{
         stage('Branch name') {
-            when {
-                expression {
-                    return env.BRANCH_NAME != 'master';
-                }
+            anyOf {
+                changeRequest()
+                branch BRANCH_MAIN
             }
             steps {
                 echo "${GIT_BRANCH.split("origin/")[1]}"
