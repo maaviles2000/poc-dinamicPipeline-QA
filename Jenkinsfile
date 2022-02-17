@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo "${GIT_BRANCH.split("origin/")[1]}"
                 echo "${ghprbPullId}"
+                echo "${ghprbActualCommit}"
             }
         }
     }
