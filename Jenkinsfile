@@ -4,7 +4,7 @@ pipeline {
         stage('Branch name') {
             when {
                 expression {
-                    return CHANGE_TARGET == 'develop';
+                    return env.BRANCH_NAME != 'master';
                 }
             }
             steps {
