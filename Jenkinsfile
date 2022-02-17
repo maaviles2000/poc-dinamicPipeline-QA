@@ -1,4 +1,9 @@
-def x = "***************************************************************************************"
+def originBranch = ghprbTargetBranch;
+/* Can use *
+echo "${GIT_BRANCH.split("origin/")[1]}"
+echo "${ghprbSourceBranch}"
+echo "${ghprbTargetBranch}"
+*/
 pipeline {
     agent any
     stages{
@@ -17,30 +22,27 @@ pipeline {
                 echo "Do nothing!"
             }
         }
-        when { 
-            expression { return ghprbTargetBranch == 'develop';}
-            stage("Delete after #4"){
-                steps{
-                    echo "Do nothing!"
+        stage('Branch name') {
+            when {
+
+                expression {
+                    return originBranch == 'master';
                 }
+            }
+            steps {
+                echo "Do nothing!"
             }
         }
         stage('Branch name') {
             when {
 
                 expression {
-                    return ghprbTargetBranch == 'master';
+                    return originBranch == 'develop';
                 }
             }
             steps {
                 echo "Lets code in develop!"
-                /*Same
-                echo "${x}"
-                echo "${GIT_BRANCH.split("origin/")[1]}"
-                echo "${ghprbSourceBranch}"
-                echo "${x}"
-                echo "${ghprbTargetBranch}"
-                echo "${x}"*/
+
             }
         }
     }
