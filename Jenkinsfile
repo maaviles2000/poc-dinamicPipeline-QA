@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                echo 'run this stage - only if the branch name started with feature/'
+                echo "${GITHUB_PR_TARGET_BRANCH}"
             }
         }
     }
