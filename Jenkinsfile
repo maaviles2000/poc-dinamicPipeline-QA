@@ -1,4 +1,4 @@
-dev x = "*****"
+def x = "*****"
 pipeline {
     agent any
     stages{
