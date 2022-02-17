@@ -2,6 +2,26 @@ def x = "***********************************************************************
 pipeline {
     agent any
     stages{
+        stage("Delete after #1"){
+            steps{
+                echo "Do nothing!"
+            }
+        }
+        stage("Delete after #2"){
+            steps{
+                echo "Do nothing!"
+            }
+        }
+        stage("Delete after #3"){
+            steps{
+                echo "Do nothing!"
+            }
+        }
+        stage("Delete after #4"){
+            steps{
+                echo "Do nothing!"
+            }
+        }
         stage('Branch name') {
             when {
                 expression {
