@@ -22,7 +22,7 @@ pipeline {
                 echo "Do nothing!"
             }
         }
-        stage('Branch name') {
+        stage('feature/* to master') {
             when {
 
                 expression {
@@ -33,7 +33,7 @@ pipeline {
                 echo "Do nothing!"
             }
         }
-        stage('Branch name') {
+        stage('feature/* to develop') {
             when {
 
                 expression {
