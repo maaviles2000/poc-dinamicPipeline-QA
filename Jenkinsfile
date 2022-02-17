@@ -18,7 +18,7 @@ pipeline {
             }
         }
         when { 
-            expression { return ghprbTargetBranch == 'master';}
+            expression { return ghprbTargetBranch == 'develop';}
             stage("Delete after #4"){
                 steps{
                     echo "Do nothing!"
