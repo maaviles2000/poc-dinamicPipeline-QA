@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Branch name') {
             when {
-                changeRequest branch: "develop"
+                changeRequest target: "develop"
             }
             steps {
                 echo "${GIT_BRANCH.split("origin/")[1]}"
