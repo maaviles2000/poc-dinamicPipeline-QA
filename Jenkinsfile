@@ -17,13 +17,17 @@ pipeline {
                 echo "Do nothing!"
             }
         }
-        stage("Delete after #4"){
-            steps{
-                echo "Do nothing!"
+        when { 
+            expression { return ghprbTargetBranch == 'master';}
+            stage("Delete after #4"){
+                steps{
+                    echo "Do nothing!"
+                }
             }
         }
         stage('Branch name') {
             when {
+
                 expression {
                     return ghprbTargetBranch == 'master';
                 }
