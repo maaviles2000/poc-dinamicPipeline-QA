@@ -1,3 +1,4 @@
+dev x = "*****"
 pipeline {
     agent any
     stages{
@@ -12,6 +13,8 @@ pipeline {
                 echo "${ghprbPullId}"
                 echo "${ghprbActualCommit}"
                 echo "${ghprbSourceBranch}"
+                echo "${ghprbTargetBranch}"
+                echo "${x}"
             }
         }
     }
