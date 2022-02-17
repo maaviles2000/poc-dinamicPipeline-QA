@@ -1,0 +1,19 @@
+def originBranch = ghprbTargetBranch;
+
+pipeline {
+    agent any
+    stages{
+        
+            when {
+                expression {
+                    return originBranch == 'master';
+                }
+            }
+            steps {
+                stage('feature/* to master') {
+                    echo "Do nothing!"
+                }
+            }
+      
+    }
+}
