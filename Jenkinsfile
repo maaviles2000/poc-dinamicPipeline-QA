@@ -1,3 +1,4 @@
+def targetBranch = ghprbTargetBranch;
 pipeline {
     agent any
     
@@ -5,24 +6,27 @@ pipeline {
         stage('Releases'){
             stages {
                 stage('Master') {
+                    
                     when {
                         expression {
-                        return targetBranch == 'master';
+                            return targetBranch == 'master';
                         }
                     }
+                    
                     steps {
                         echo "**** MASTER ****"
                         build job: 'Test'
                     }
                 }
+                
                 stage('Develop') {
                    when {
                         expression {
-                        return targetBranch == 'develop';
+                            return targetBranch == 'develop';
+                        }
                     }
                     steps {
                         echo "**** DEVELOP ****"
-                    }
                     } 
                 }
             }
