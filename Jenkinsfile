@@ -1,4 +1,4 @@
-def targetBranch = ghprbTargetBranch;
+def targetBranch = ghprbTargetBranch
 pipeline {
     agent any
     
