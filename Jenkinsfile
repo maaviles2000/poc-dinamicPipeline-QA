@@ -1,15 +1,13 @@
 def targetBranch = ghprbTargetBranch;
-/* Can use *
-echo "${GIT_BRANCH.split("origin/")[1]}"
-echo "${ghprbSourceBranch}"
-echo "${ghprbTargetBranch}"
-*/
+
 pipeline {
     agent any
     stages{
         stage("Delete after #1"){
             steps{
-                echo "Do nothing!"
+                echo "${GIT_BRANCH.split("origin/")[1]}"
+                echo "${ghprbSourceBranch}"
+                echo "${ghprbTargetBranch}"
             }
         }
         stage("Delete after #2"){
